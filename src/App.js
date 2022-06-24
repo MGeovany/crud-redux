@@ -1,7 +1,11 @@
 import './App.css'
 
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from './store/slices/counter/counterSlice'
+import {
+  decrement,
+  increment,
+  incrementByAmount
+} from './store/slices/counter/counterSlice'
 import { Link } from 'react-router-dom'
 
 function App() {
@@ -18,6 +22,9 @@ function App() {
       <p>
         <button onClick={() => dispatch(decrement())}>Decrement</button>
       </p>
+      <button onClick={() => dispatch(incrementByAmount(5))}>
+        Increment by 5
+      </button>
       <p>
         <Link to='/home'>Home</Link>
       </p>
